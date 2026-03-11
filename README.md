@@ -102,7 +102,7 @@ Load modules:
 
 ```bash
 module load cray-mpich
-module load nvhpc
+module load cuda   # or whichever CUDA module is available on your cluster
 ```
 
 Compile:
@@ -118,7 +118,8 @@ nvcc -O2 -o mpi_cuda_test mpi_cuda_test.cu \
 
 `-lmpi_gtl_cuda` links the GPU Transport Layer that enables CUDA-aware paths
 inside Cray MPICH. Both env vars (`MPICH_DIR`, `CRAY_MPICH_ROOTDIR`) are set
-automatically by `module load cray-mpich`.
+automatically by `module load cray-mpich`. `nvcc` must be on `PATH` from
+whichever CUDA module is loaded.
 
 ---
 
