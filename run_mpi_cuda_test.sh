@@ -23,8 +23,8 @@ export MPICH_GPU_SUPPORT_ENABLED=1
 export LD_PRELOAD=${CRAY_MPICH_ROOTDIR}/gtl/lib/libmpi_gtl_cuda.so
 
 # ── Optional diagnostics ──────────────────────────────────────────────────────
-export MPICH_ENV_DISPLAY=1        # print active MPICH env vars at startup
-export MPICH_VERSION_DISPLAY=1    # print Cray MPICH version at startup
+export MPICH_ENV_DISPLAY=0
+export MPICH_VERSION_DISPLAY=0
 export CUDA_VISIBLE_DEVICES=0,1,2,3  # explicit GPU ordering per node
 
 # ── Build (skip if already compiled) ─────────────────────────────────────────
@@ -54,7 +54,7 @@ echo "Started: $(date)"
 echo "=============================="
 
 # ── Execute ───────────────────────────────────────────────────────────────────
-srun --mpi=pmi2 ${BINARY}
+srun ${BINARY}
 
 echo ""
 echo "Finished: $(date)"
