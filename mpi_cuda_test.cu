@@ -90,26 +90,44 @@ static int count_errors_gpu(const float *d, float expected, int n)
 
 /* ── test 1 : topology ───────────────────────────────────────────────────── */
 
+/* Per-rank payload gathered to rank 0 for ordered printing */
+typedef struct {
+    char   hostname[256];
+    char   gpu_name[256];
+    int    gpu_idx;
+    int    gpu_count;
+    size_t gpu_mem_mb;
+} TopoInfo;
+
 static void test_topology(int rank, int size)
 {
-    char hostname[256];
-    gethostname(hostname, sizeof(hostname));
+    TopoInfo local;
+    gethostname(local.hostname, sizeof(local.hostname));
 
-    int dev, dev_count;
-    CUDA_CHECK(cudaGetDevice(&dev));
-    CUDA_CHECK(cudaGetDeviceCount(&dev_count));
+    CUDA_CHECK(cudaGetDevice(&local.gpu_idx));
+    CUDA_CHECK(cudaGetDeviceCount(&local.gpu_count));
 
     cudaDeviceProp prop;
-    CUDA_CHECK(cudaGetDeviceProperties(&prop, dev));
+    CUDA_CHECK(cudaGetDeviceProperties(&prop, local.gpu_idx));
+    strncpy(local.gpu_name, prop.name, sizeof(local.gpu_name) - 1);
+    local.gpu_name[sizeof(local.gpu_name) - 1] = '\0';
+    local.gpu_mem_mb = prop.totalGlobalMem / (1024 * 1024);
 
-    /* Gather and print in rank order */
-    MPI_Barrier(MPI_COMM_WORLD);
-    for (int r = 0; r < size; r++) {
-        if (rank == r)
-            printf("  rank %3d | host %-20s | GPU %d/%d  %s  (%zu MB)\n",
-                   rank, hostname, dev, dev_count, prop.name,
-                   prop.totalGlobalMem / (1024 * 1024));
-        MPI_Barrier(MPI_COMM_WORLD);
+    TopoInfo *all = NULL;
+    if (rank == 0)
+        all = (TopoInfo *)malloc(size * sizeof(TopoInfo));
+
+    MPI_CHECK(MPI_Gather(&local, sizeof(TopoInfo), MPI_BYTE,
+                         all,   sizeof(TopoInfo), MPI_BYTE,
+                         0, MPI_COMM_WORLD));
+
+    if (rank == 0) {
+        for (int r = 0; r < size; r++)
+            printf("  rank %3d | host %-44s | GPU %d/%d  %s  (%zu MB)\n",
+                   r, all[r].hostname,
+                   all[r].gpu_idx, all[r].gpu_count,
+                   all[r].gpu_name, all[r].gpu_mem_mb);
+        free(all);
     }
 }
 
