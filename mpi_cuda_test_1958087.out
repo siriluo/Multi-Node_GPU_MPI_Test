@@ -1,0 +1,177 @@
+==============================
+Job:     1958087
+Nodes:   gh[082,106]
+Ranks:   8  (4 per node)
+GPUs:    4 per node
+Started: Wed Mar 11 10:41:55 AM CDT 2026
+==============================
+========================================
+  Multi-Node GPU MPI Test
+  Ranks: 1   GPUs/node: 4
+========================================
+
+[1] Topology
+  rank   0 | host gh082.hsn.cm.delta.internal.ncsa.edu | GPU 0/4  NVIDIA GH200 120GB  (97280 MB)
+
+[2] Ring-shift correctness
+  PASSED  (ring-shift, 1024 elements per rank)
+
+[3] Ping-pong latency (rank 0 <-> rank 1)
+  SKIPPED (need >= 2 ranks)
+
+[4] Bandwidth sweep (rank 0 <-> rank 1, bidirectional)
+  SKIPPED (need >= 2 ranks)
+
+[5] GPU Allreduce
+  PASSED  (allreduce sum=1, 1048576 floats, 1 ranks)
+
+All tests complete.
+========================================
+  Multi-Node GPU MPI Test
+  Ranks: 1   GPUs/node: 4
+========================================
+
+[1] Topology
+  rank   0 | host gh082.hsn.cm.delta.internal.ncsa.edu | GPU 0/4  NVIDIA GH200 120GB  (97280 MB)
+
+[2] Ring-shift correctness
+  PASSED  (ring-shift, 1024 elements per rank)
+
+[3] Ping-pong latency (rank 0 <-> rank 1)
+  SKIPPED (need >= 2 ranks)
+
+[4] Bandwidth sweep (rank 0 <-> rank 1, bidirectional)
+  SKIPPED (need >= 2 ranks)
+
+[5] GPU Allreduce
+  PASSED  (allreduce sum=1, 1048576 floats, 1 ranks)
+
+All tests complete.
+========================================
+  Multi-Node GPU MPI Test
+  Ranks: 1   GPUs/node: 4
+========================================
+
+[1] Topology
+  rank   0 | host gh082.hsn.cm.delta.internal.ncsa.edu | GPU 0/4  NVIDIA GH200 120GB  (97280 MB)
+
+[2] Ring-shift correctness
+  PASSED  (ring-shift, 1024 elements per rank)
+
+[3] Ping-pong latency (rank 0 <-> rank 1)
+  SKIPPED (need >= 2 ranks)
+
+[4] Bandwidth sweep (rank 0 <-> rank 1, bidirectional)
+  SKIPPED (need >= 2 ranks)
+
+[5] GPU Allreduce
+  PASSED  (allreduce sum=1, 1048576 floats, 1 ranks)
+
+All tests complete.
+========================================
+  Multi-Node GPU MPI Test
+  Ranks: 1   GPUs/node: 4
+========================================
+
+[1] Topology
+  rank   0 | host gh082.hsn.cm.delta.internal.ncsa.edu | GPU 0/4  NVIDIA GH200 120GB  (97280 MB)
+
+[2] Ring-shift correctness
+  PASSED  (ring-shift, 1024 elements per rank)
+
+[3] Ping-pong latency (rank 0 <-> rank 1)
+  SKIPPED (need >= 2 ranks)
+
+[4] Bandwidth sweep (rank 0 <-> rank 1, bidirectional)
+  SKIPPED (need >= 2 ranks)
+
+[5] GPU Allreduce
+  PASSED  (allreduce sum=1, 1048576 floats, 1 ranks)
+
+All tests complete.
+========================================
+  Multi-Node GPU MPI Test
+  Ranks: 1   GPUs/node: 4
+========================================
+
+[1] Topology
+  rank   0 | host gh106.hsn.cm.delta.internal.ncsa.edu | GPU 0/4  NVIDIA GH200 120GB  (97280 MB)
+
+[2] Ring-shift correctness
+  PASSED  (ring-shift, 1024 elements per rank)
+
+[3] Ping-pong latency (rank 0 <-> rank 1)
+  SKIPPED (need >= 2 ranks)
+
+[4] Bandwidth sweep (rank 0 <-> rank 1, bidirectional)
+  SKIPPED (need >= 2 ranks)
+
+[5] GPU Allreduce
+  PASSED  (allreduce sum=1, 1048576 floats, 1 ranks)
+
+All tests complete.
+========================================
+  Multi-Node GPU MPI Test
+  Ranks: 1   GPUs/node: 4
+========================================
+
+[1] Topology
+  rank   0 | host gh106.hsn.cm.delta.internal.ncsa.edu | GPU 0/4  NVIDIA GH200 120GB  (97280 MB)
+
+[2] Ring-shift correctness
+  PASSED  (ring-shift, 1024 elements per rank)
+
+[3] Ping-pong latency (rank 0 <-> rank 1)
+  SKIPPED (need >= 2 ranks)
+
+[4] Bandwidth sweep (rank 0 <-> rank 1, bidirectional)
+  SKIPPED (need >= 2 ranks)
+
+[5] GPU Allreduce
+  PASSED  (allreduce sum=1, 1048576 floats, 1 ranks)
+
+All tests complete.
+========================================
+  Multi-Node GPU MPI Test
+  Ranks: 1   GPUs/node: 4
+========================================
+
+[1] Topology
+  rank   0 | host gh106.hsn.cm.delta.internal.ncsa.edu | GPU 0/4  NVIDIA GH200 120GB  (97280 MB)
+
+[2] Ring-shift correctness
+  PASSED  (ring-shift, 1024 elements per rank)
+
+[3] Ping-pong latency (rank 0 <-> rank 1)
+  SKIPPED (need >= 2 ranks)
+
+[4] Bandwidth sweep (rank 0 <-> rank 1, bidirectional)
+  SKIPPED (need >= 2 ranks)
+
+[5] GPU Allreduce
+  PASSED  (allreduce sum=1, 1048576 floats, 1 ranks)
+
+All tests complete.
+========================================
+  Multi-Node GPU MPI Test
+  Ranks: 1   GPUs/node: 4
+========================================
+
+[1] Topology
+  rank   0 | host gh106.hsn.cm.delta.internal.ncsa.edu | GPU 0/4  NVIDIA GH200 120GB  (97280 MB)
+
+[2] Ring-shift correctness
+  PASSED  (ring-shift, 1024 elements per rank)
+
+[3] Ping-pong latency (rank 0 <-> rank 1)
+  SKIPPED (need >= 2 ranks)
+
+[4] Bandwidth sweep (rank 0 <-> rank 1, bidirectional)
+  SKIPPED (need >= 2 ranks)
+
+[5] GPU Allreduce
+  PASSED  (allreduce sum=1, 1048576 floats, 1 ranks)
+
+All tests complete.
+
+Finished: Wed Mar 11 10:42:02 AM CDT 2026
