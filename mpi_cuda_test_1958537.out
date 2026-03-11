@@ -1,0 +1,49 @@
+[build] Compiling mpi_cuda_test.cu ...
+[build] Done.
+==============================
+Job:     1958537
+Nodes:   gh[049,109]
+Ranks:   8  (4 per node)
+GPUs:    4 per node
+Started: Wed Mar 11 03:11:25 PM CDT 2026
+==============================
+========================================
+  Multi-Node GPU MPI Test
+  Ranks: 8   GPUs/node: 4
+========================================
+
+[1] Topology
+  rank   0 | host gh049.hsn.cm.delta.internal.ncsa.edu         | GPU 0/4  NVIDIA GH200 120GB  (97280 MB)
+  rank   1 | host gh049.hsn.cm.delta.internal.ncsa.edu         | GPU 1/4  NVIDIA GH200 120GB  (97280 MB)
+  rank   2 | host gh049.hsn.cm.delta.internal.ncsa.edu         | GPU 2/4  NVIDIA GH200 120GB  (97280 MB)
+  rank   3 | host gh049.hsn.cm.delta.internal.ncsa.edu         | GPU 3/4  NVIDIA GH200 120GB  (97280 MB)
+  rank   4 | host gh109.hsn.cm.delta.internal.ncsa.edu         | GPU 0/4  NVIDIA GH200 120GB  (97280 MB)
+  rank   5 | host gh109.hsn.cm.delta.internal.ncsa.edu         | GPU 1/4  NVIDIA GH200 120GB  (97280 MB)
+  rank   6 | host gh109.hsn.cm.delta.internal.ncsa.edu         | GPU 2/4  NVIDIA GH200 120GB  (97280 MB)
+  rank   7 | host gh109.hsn.cm.delta.internal.ncsa.edu         | GPU 3/4  NVIDIA GH200 120GB  (97280 MB)
+
+[2] Ring-shift correctness
+  PASSED  (ring-shift, 1024 elements per rank)
+
+[3] Ping-pong latency (rank 0 <-> rank 1)
+  latency  rank 0 <-> rank 1 : 16.07 us  (1 float, 1000 iters)
+
+[4] Bandwidth sweep (rank 0 <-> rank 1, bidirectional)
+  msg size             bytes        GB/s
+         4 B               4        0.00
+         1 KB           1024        0.10
+        64 KB          65536        5.86
+         1 MB        1048576       54.26
+        16 MB       16777216      121.76
+        64 MB       67108864      130.10
+       256 MB      268435456      132.47
+
+[5] GPU Allreduce
+  PASSED  (allreduce sum=8, 1048576 floats, 8 ranks)
+
+All tests complete.
+
+MPICH Slingshot Network Summary: 0 network timeouts
+
+
+Finished: Wed Mar 11 03:11:34 PM CDT 2026
