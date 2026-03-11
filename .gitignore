@@ -1,0 +1,3 @@
+mpi_cuda_test
+*.out
+*.err
